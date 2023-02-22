@@ -28,3 +28,40 @@ export const NavLogo = styled.a`
   text-decoration: none;
 `;
 
+export const NavMenu = styled.ul`
+  display: flex;
+  list-style: none;
+  align-items: center;
+
+  li {
+    margin-left: 2rem;
+
+    a {
+      text-decoration: none;
+      color: ${({ theme }) => theme.colors.light};
+      cursor: pointer;
+
+      :hover {
+        color: ${({ theme }) => theme.colors.primary};
+      }
+    }
+
+    img {
+      border-radius: 50%;
+      max-height: 2rem;
+      display: flex;
+    }
+  }
+`;
+
+export const DropdownMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  background-color: ${({ theme }) => theme.colors.white};
+  min-width: 150px;
+  padding: 1rem;
+  box-shadow: ${({ theme }) => `0 1px 8px ${theme.colors.gray}`};
+`
+

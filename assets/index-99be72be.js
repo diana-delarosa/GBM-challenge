@@ -340,4 +340,4 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		margin: 0;
 		padding: 0;
 	}
-`,Vq="1081330128249-8485qmnfhghhvl2anhc59vaf5homr24i.apps.googleusercontent.co";Df.createRoot(document.getElementById("root")).render(O(it.StrictMode,{children:me(KS,{theme:w3,children:[O(Yq,{}),O(nS,{children:O(r5,{clientId:Vq,children:O(c5,{children:O(tS,{children:me(zs,{path:"/",element:O(b5,{}),errorElement:O(Dq,{}),children:[O(zs,{index:!0,element:O(Nq,{})}),O(zs,{path:"/login",element:O(Hq,{})})]})})})})})]})}));
+`,Vq="1081330128249-8485qmnfhghhvl2anhc59vaf5homr24i.apps.googleusercontent.com";Df.createRoot(document.getElementById("root")).render(O(it.StrictMode,{children:me(KS,{theme:w3,children:[O(Yq,{}),O(nS,{children:O(r5,{clientId:Vq,children:O(c5,{children:O(tS,{children:me(zs,{path:"/",element:O(b5,{}),errorElement:O(Dq,{}),children:[O(zs,{index:!0,element:O(Nq,{})}),O(zs,{path:"/login",element:O(Hq,{})})]})})})})})]})}));

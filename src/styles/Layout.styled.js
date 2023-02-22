@@ -7,4 +7,7 @@ export const LayoutContainer = styled(Container)`
   padding-bottom: 20px;
   position: relative;
   min-height: ${({ theme }) => `calc(100vh - ${theme.heights.footer})`};
+  display: ${({ center }) => center && "flex"};
+  justify-content: ${({ center }) => center && "center"};
+  align-items: ${({ center }) => center && "center"};
 `;

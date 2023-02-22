@@ -1,6 +1,7 @@
 import { ResponsiveLine } from "@nivo/line";
 import { ChartTooltip } from "../styles/Dashboard.styled";
 import { theme } from "../styles/Theme";
+import PropTypes from 'prop-types';
 
 const LineChart = ({ data }) => {
   return (
@@ -50,5 +51,9 @@ const LineChart = ({ data }) => {
     />
   );
 };
+
+LineChart.propTypes = {
+  data: PropTypes.array.isRequired
+}
 
 export default LineChart;

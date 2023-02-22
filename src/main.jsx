@@ -1,35 +1,38 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { 
-  createBrowserRouter, 
-  RouterProvider 
+  BrowserRouter, 
+  Routes, 
+  Route
 } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import Layout from './components/Layout'
-import Dashboard from './pages/DashboardPage'
+import Layout from './layouts/Layout'
+import { AuthProvider } from './contexts/AuthProvider'
+import DashboardPage from './pages/DashboardPage'
 import ErrorPage from './pages/ErrorPage'
+import LoginPage from './pages/LoginPage'
 import GlobalStyles from './styles/Global'
 import { theme } from './styles/Theme'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout/>,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <Dashboard />
-      }
-    ]
-  }
-]);
+const clientID = import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <GoogleOAuthProvider clientId={clientID}>
+          <AuthProvider>
+            <Routes>
+              <Route path='/' element={<Layout />} errorElement={<ErrorPage />}>
+                <Route index element={<DashboardPage />} />
+                <Route path='/login' element={<LoginPage />} />
+              </Route>
+            </Routes>
+          </AuthProvider>
+        </GoogleOAuthProvider>
+      </BrowserRouter>
     </ThemeProvider>    
   </React.StrictMode>,
 )

@@ -18,6 +18,7 @@ export const ErrorTitle = styled.h1`
 export const ErrorDescription = styled.p`
   font-weight: 700;
   margin: 12px 0;
+  text-align: ${({ align }) => align && align};
 `;
 
 export const ErrorMessage = styled(ErrorDescription)`
